@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<!-- Dominique Houston, 1309, ASDI -->
+
+	<html>
+	<html lang="en">
+                            <head>
+                            <meta charset="utf-8">
+                            <title>HikR</title>
+                            <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+                            <meta name="HandheldFriendly" content="True">
+                            <meta name="MobileOptimized" content="320"/>
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <!-- Mobile IE needs ClearType for smoothing fonts -->
+                            <meta http-equiv="cleartype" content="on">
+                            <!-- StyleSheets under here -->
+                            <link rel="stylesheet" href="main.css"/>
+                            <link rel="stylesheet" href="themes/Hikr.css" />
+                            <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile.structure-1.3.2.min.css" />
+                            <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+                            <script src="js/libs/modernizr.custom.min.js">
+                            </script>
+                            </script>
+                            </head>		
+		<body>
+		<!-- Start Home Page -->
+<div data-role="page" id="home" data-theme="a">
+	<div data-role="content" data-inset="false" class="ui-content-background-color">
+		<div data-role="header" data-position="fixed">
+			<header>
+			<div id="boundingBox">
+				
+					<div id="appTitle">HikR</div>	
+			</div>
+			</header>
+		</div>
+		<! CTA Button -->
+		<div id="ctaButton">
+			<a href="#addHike">
+				<img src="images/ctaMap.png" class="ctaImg"></a>
+				<span class="descriptionText">Keep Track of Your Hikes</span>
+				<span class="addHikeButton">
+				<a href="#addHike">Add New Hike</a>
+				</span>
+			
+			
+		</div>
+		<!-- List -->
+		<ul data-role="listview" data-inset="true">
+			<li>
+			<a href="#addHike" value="addHike" id="addHike">
+			<img src="images/icon_map.png" class="ui-li-icon">
+			Add New Hike </a>
+			</li>
+			<li>
+			<a href="#myHikes" value="myHikes" id="myHikes">
+			<img src="images/icon_map.png" class="ui-li-icon">
+			My Hikes </a>
+			</li>
+		</ul>
+	</div>
+	<!-- List -->
+	<! -- Begin Footer -- >
+	<footer>
+	
+	</footer>
+	<! -- End Footer -->
+	<div data-role="footer" data-position="fixed">
+		<!-- Nav -->
+		<div data-role="navbar" data-theme="a">
+			<ul>
+				<li>
+				<a data-ajax="false" href="#addHike" data-icon="plus">
+				New Hike </a>
+				</li>
+				<li>
+				<a href="#myHikes" data-icon="myapp-map" class="ui-icon-map">
+				My Hikes </a>
+				</li>
+				<li>
+				<a href="#info" data-icon="info">
+				Tips & Info </a>
+				</li>
+			</ul>
+		</div>
+		<!-- Nav -->
+	</div>
+</div>
+<! -- End Home Page -- >
+<!--  Add Hike page -->
+				<div data-role="page" id="addHike" data-add-back-btn="true" data-theme="a">
+					<div data-role="header" data-position="fixed">
+						<div data-role="header" data-position="fixed">
+						    <header>
+			<div id="boundingBox">
+				
+					<div id="appTitle"><a href="#home">HikR</a></div>	
+			</div>
+			</header>
+						  </div>
+					
+					</div>
+					<div data-role="content" class="ui-content-background-color" id="addHike">
+						<! -- Error Messages -- >
+						<ul id="errors">
+						</ul>
+						<! -- End Error Messages -- >
+					
+						<! -- Begin Form -- >
+    <div id="formBox">
+                                  <form action="#" id="hikeForm">
+        <li>
+        <!--- Form Label No Longer Hidden, Form Selection ---><label class="headLabel"><strong>Add New Hike</strong></label>
+                                    </li>
+        <div data-role="fieldcontain">
+        <!--- Form Label No Longer Hidden, Form Selection ---><label for="trailName">Trail Name:</label>
+                                      <input type="text" name="trailName" id="trailName" class="required" value="" placeholder="(eg. Pikes Peak)"/>
+        </div>
+        <div data-role="fieldcontain">
+        <!--- Form Label No Longer Hidden, Form Selection ---><label for="trailDate">Date of Hike:</label>
+                                      <input type="date" name="trailDate" id="trailDate" class="required" value="" placeholder="(eg.01/01/2013)"/>
+                                    </div>
+        <div data-role="fieldcontain">
+        <!--- Form Label No Longer Hidden, Form Selection ---><label for="trailLocation">Trail Location:</label>
+                                      <input type="text" name="trailLocation" id="trailLocation" class="required"  value="" placeholder="(eg. Mountain Springs, CO"/>
+                                    </div>
+        <div data-role="fieldcontain">
+        <!--- Form Label No Longer Hidden, Form Selection ---><label for="trailDistance">Trail Distance (mi):</label>
+                                      <input type="text" name="trailDistance" id="trailDistance" value="" class="required url" placeholder="(eg. 25 miles)"/>
+                                    </div>
+       
+        
+        <input id="submit" type="submit" value="Save Trail">
+      </form>
+                                </div>
+    <! -- End Form  -- > 
+					</div>
+					
+					<div data-role="footer" data-position="fixed">
+					<! -- End Footer -->
+	<div data-role="footer" data-position="fixed">
+		<!-- Nav -->
+		<div data-role="navbar" data-theme="a">
+			<ul>
+				<li>
+				<a href="#myHikes" data-icon="myapp-map" class="ui-icon-map">
+				My Hikes </a>
+				</li>
+				<li>
+				<a href="#info" data-icon="info">
+				Tips & Info </a>
+				</li>
+			</ul>
+		</div>
+		<!-- Nav -->
+	</div>
+
+					</div>
+				</div>
+			</div>
+<! -- End Add Hike Page -- >
+<!--  My Hikes Page -->
+				<div data-role="page" id="myHikes" data-add-back-btn="true" data-theme="a">
+					<div data-role="header" data-position="fixed">
+						<div data-role="header" data-position="fixed">
+						    <header>
+			<div id="boundingBox">
+				
+					<div id="appTitle"><a href="#home">HikR</a></div>	
+			</div>
+			</header>
+						  </div>
+					
+					</div>
+					<div data-role="content" class="ui-content-background-color" id="myHikes">
+						<div class="headLabel">My Hikes</div>
+						<div class="clear" style="height:25px;"></div>
+						<ul data-role="listview" style="width:auto;margin:0px auto;">
+							<li><a href="#pikesPeak">Pikes Peak</a></li>
+						</ul>					
+					</div>
+					
+					<div data-role="footer" data-position="fixed">
+					<! -- End Footer -->
+	<div data-role="footer" data-position="fixed">
+		<!-- Nav -->
+		<div data-role="navbar" data-theme="a">
+			<ul>
+				<li>
+				<a href="#myHikes" data-icon="myapp-map" class="ui-icon-map ui-btn-active">
+				My Hikes </a>
+				</li>
+				<li>
+				<a href="#info" data-icon="info">
+				Tips & Info </a>
+				</li>
+			</ul>
+		</div>
+		<!-- Nav -->
+	</div>
+
+					</div>
+				</div>
+			</div>
+<! -- End Add Hike Page -- >
+<!--  My Hikes - Pikes Peak Page -->
+				<div data-role="page" id="pikesPeak" data-add-back-btn="true" data-theme="a">
+					<div data-role="header" data-position="fixed">
+						<div data-role="header" data-position="fixed">
+						    <header>
+			<div id="boundingBox">
+				
+					<div id="appTitle"><a href="#home">HikR</a></div>	
+			</div>
+			</header>
+						  </div>
+					
+					</div>
+					<div data-role="content" class="ui-content-background-color" id="myHikes01">
+						<div class="headLabel">Pikes Peak</div>
+						<div class="clear" style="height:25px;"></div>
+						<label>Date:</label> 01/01/2014
+						<div class="clear"></div>
+						<hr />
+						<label>Location:</label> Barr Trail Manitou Springs, CO
+						<div class="clear"></div>
+						<hr />
+						<label>Distance:</label> 25 miles
+						<div class="clear"></div>
+						<hr />
+						<label>Notes/Comments:</label> 
+						<div class="clear"></div>
+						This trail was awesome! It was a bit strenuous, but we survived it! Amazing views! It was like a fairtytale. Very picturesque.
+						
+					</div>
+					
+					<div data-role="footer" data-position="fixed">
+					<! -- End Footer -->
+	<div data-role="footer" data-position="fixed">
+		<!-- Nav -->
+		<div data-role="navbar" data-theme="a">
+			<ul>
+				<li>
+				<a href="#myHikes" data-icon="myapp-map" class="ui-icon-map ui-btn-active">
+				My Hikes </a>
+				</li>
+				<li>
+				<a href="#info" data-icon="info">
+				Tips & Info </a>
+				</li>
+			</ul>
+		</div>
+		<!-- Nav -->
+	</div>
+
+					</div>
+				</div>
+			</div>
+<! -- End Pikes Peak Hike Page -- >
+<!--  My Hikes - Pikes Peak Page -->
+				<div data-role="page" id="info" data-add-back-btn="true" data-theme="a">
+					<div data-role="header" data-position="fixed">
+						<div data-role="header" data-position="fixed">
+						    <header>
+			<div id="boundingBox">
+				
+					<div id="appTitle"><a href="#home">HikR</a></div>	
+			</div>
+			</header>
+						  </div>
+					
+					</div>
+					<div data-role="content" class="ui-content-background-color" id="myHikes01">
+						<div class="headLabel">Tips & Info</div>
+						<div class="clear" style="height:25px;"></div>
+						<p>Copyright 2013 &copy; Dominique Houston</p>					
+						</div>
+					
+					<div data-role="footer" data-position="fixed">
+					<! -- End Footer -->
+	<div data-role="footer" data-position="fixed">
+		<!-- Nav -->
+		<div data-role="navbar" data-theme="a">
+			<ul>
+				<li>
+				<a data-ajax="false" href="#addHike" data-icon="plus">
+				New Hike </a>
+				</li>
+				<li>
+				<a href="#myHikes" data-icon="myapp-map" class="ui-icon-map">
+				My Hikes </a>
+				</li>
+				<li>
+				<a href="#info" data-icon="info" class="ui-btn-active">
+				Tips & Info </a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Nav -->
+	</div>
+
+					</div>
+				</div>
+			</div>
+<! -- End Pikes Peak Hike Page -- >
+
+		
+		</body>
+		<script scr="main.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	</html>
+	
+	
